@@ -27,7 +27,42 @@ include('maincontroller.php');
 </head>
 <body>
 
-<h1><center><a href="index.php">Back</a></center></h1>
+
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1 active">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Sano Sansar
+        </a>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+         <i class="fas fa-user"></i>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333" style="margin-top: 7px; padding: 3px 3px 3px 3px;">
+
+          <a class="dropdown-item" href="signin.php">Login</a>
+          <a class="dropdown-item" href="signup.php">Register</a>
+
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+
 
 
 
@@ -61,22 +96,31 @@ include('maincontroller.php');
 
     <!-- Sign in button -->
     <button class="btn btn-info btn-block my-4" name="signin" id="signin">Sign in</button>
-
+    <br>
     <!-- Register -->
     <p>Not a member?
-        <a href="">Register</a>
+        <a href="signup.php">Register</a>
     </p>
 
-    <!-- Social login -->
-    <p>or sign in with:</p>
-
-    <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
-    <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
-    <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
-    <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
 
 </div>
 <!-- Default form login -->
+</div>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="page-footer font-small secondary-color lighten-1 active" style="margin-top: 20px;">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> Sanosansar.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 </body>
 </html>
 

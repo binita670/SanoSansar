@@ -31,6 +31,12 @@ if(isset($_POST['signup']))
 
 }
 
+if (isset($_POST['logout']))
+{
+	session_destroy();
+	header('location:index.php');
+}
+
 if (isset($_POST['signin']))
 {
 	$email=$_POST['email'];

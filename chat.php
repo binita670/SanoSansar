@@ -28,12 +28,79 @@ include ('maincontroller.php');
 </head>
 <body>
 
+  <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1 active">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">Sano Sansar
+        </a>
+      </li>
+            <?php
+       if(isset($_SESSION['user']))
+       {
+          echo'<li class="nav-item active">
+        <a class="nav-link" href="chat.php">Chat Room
+        </a>
+      </li>';
+       }
+      ?>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+        
+         <?php
+          if(isset($_SESSION['user']))
+          {
+            echo'<img src="image/'.$_SESSION['photo'].'" class="rounded-circle z-depth-0"
+                alt="avatar image" height="35">';
+          }
+          else
+          {
+            echo' <i class="fas fa-user"></i>
+            ';
+          }
+         ?>
+        </a>
 
-	<div style="margin-top: 2%"><h1><center>CHAT ROOM<br>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+          aria-labelledby="navbarDropdownMenuLink-333" style="margin-top: 7px; padding: 3px 3px 3px 3px;">
+          <?php
+          if(!isset($_SESSION['user']))
+          {
+          echo'<a class="dropdown-item" href="signin.php">Login</a>
+            <a class="dropdown-item" href="signup.php">Register</a>';
+          }
+          else{
+           echo'<form method="post"><button class="btn btn-secondary-color lighten-1 active" name="logout" >Logout</button></form>';
+          }
+          ?>
+
+
+
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
+
+	<div style="margin-top: 2%"><h1 style="color: blue;"><center><strong>CHAT ROOM</strong><br></h1>
+    <div style="display: flex; justify-content: center; align-items: center;">
     <?php
-      echo $_SESSION['name'];
+      echo '<div><img src="image/'.$_SESSION['photo'].'"alt="avatar" class="avatar rounded-circle d-flex align-self-center mr-2 z-depth-1" height=80px; width=80px;></div>';
+      echo '<div><h4><b> '.strtoupper($_SESSION['name']).' <b></h4></div>';
     ?>
-  </center></h1></div>
+  </div>
+  </center></div>
 <div class="card rare-wind-gradient chat-room" style="margin-left:7%; margin-top:3%;margin-right:7%;">
   <div class="card-body">
 
@@ -67,6 +134,21 @@ include ('maincontroller.php');
   </div>
 
 </div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small secondary-color lighten-1 active" style="margin-top: 20px;">
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> Sanosansar.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
 </body>
 </html>
 
